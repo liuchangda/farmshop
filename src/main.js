@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 
 import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
+import '@/mock/mock.js'
 
 //vant完全引入
 // import Vant from 'vant';
@@ -14,8 +15,8 @@ import '@/assets/js/rem.js'
 // Vue.use(Vant);
 
 //vant按需引入
-import { Button,Icon,NavBar,Tabbar,TabbarItem } from 'vant'
-Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem)
+import { Button,Icon,NavBar,Tabbar,TabbarItem, Swipe, SwipeItem, Lazyload} from 'vant'
+Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
 
 
 new Vue({
