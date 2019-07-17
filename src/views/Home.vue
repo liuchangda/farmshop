@@ -305,10 +305,10 @@ export default {
   },
   
   created(){
-      let url1='http://www.liuchang.com/getList';
-      let url2 = 'http://www.liuyanda.com/getUser';
-      let url3 = 'http://www.liuchang.com/regExp';
-      let url4 = 'http://www.liuchang.com/list';
+      // let url1='http://www.liuchang.com/getList';
+      // let url2 = 'http://www.liuyanda.com/getUser';
+      // let url3 = 'http://www.liuchang.com/regExp';
+      // let url4 = 'http://www.liuchang.com/list';
       let url5 = url.getVarietyItem;
       axios.get(url5).then(res => { 
           this.varietyItem = res.data;

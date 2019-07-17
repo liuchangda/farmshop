@@ -15,8 +15,8 @@ import '@/mock/mock.js'
 // Vue.use(Vant);
 
 //vant按需引入
-import { Button,Icon,NavBar,Tabbar,TabbarItem, Swipe, SwipeItem, Lazyload} from 'vant'
-Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
+import { Button,Icon,NavBar,Tabbar,TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, CellGroup, Field} from 'vant'
+Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(CellGroup).use(Field)
 
 
 new Vue({
