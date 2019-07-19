@@ -35,17 +35,17 @@ export default{
     registHandler(){
         axios({
             url:url.registUser,
-            methods:'post',
+            method:'post',
             data:{
               userName:this.registUsername,
               passWord:this.registPassword
             }
-        }).then({
-
-        }).catch({
-
+        }).then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err)
         });
-    }
+    } 
   }
 }
 </script>
