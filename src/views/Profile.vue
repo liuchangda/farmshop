@@ -40,9 +40,9 @@ export default{
               userName:this.registUsername,
               passWord:this.registPassword
             }
-        }).then(res => {
+        }).then((res) => {
             console.log(res)
-        }).catch(err => {
+        }).catch((err) => {
             console.log(err)
         });
     } 
