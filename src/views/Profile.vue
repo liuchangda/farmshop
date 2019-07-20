@@ -26,6 +26,7 @@
 <script>
 import axios from 'axios';
 import url from '@/service.config.js';
+
 export default{
   data(){
     return{
@@ -63,12 +64,28 @@ export default{
     loginHandler(){
       axios({
           url:url.loginUser,
-          method:'post'
-
+          method:'post',
+          data:{
+            userName:this.loginUsername,
+            password:this.loginPassword
+          }
       }).then(res=>{
-
+          if(res.data.code == 200){
+            // this.$toast.success('登录成功');
+            // this.$router.push('/');
+            new Promise((resolve,reject)=>{
+              console.log(reject)   
+              setTimeout(() => {
+                resolve();
+              }, 1000);
+            }).then(()=>{
+              this.$toast.success('登录成功');
+              this.$router.push('/')
+            })
+          }
       }).catch(err=>{
-
+        console.log(err);
+        this.$toast.fail('登录失败');
       })
     }
   }
