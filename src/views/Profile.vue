@@ -7,7 +7,7 @@
                     <van-field label='密码' type="password" placeholder="请输入密码" clearable required v-model="loginPassword "/>
                 </van-cell-group>
                 <div>
-                  <van-button  type="primary" size="large">登录</van-button>
+                  <van-button @click="loginHandler()" type="primary" size="large">登录</van-button>
                 </div>
             </van-tab>
             <van-tab title="注册">
@@ -36,18 +36,21 @@ export default{
     }
   },
   methods:{
+    //注册的处理方法
     registHandler(){
         axios({
             url:url.registUser, //发送请求的地址
             method:'post',
             data:{
               userName:this.registUsername, //名字和mongoose中的模型一一对应才能匹配上
-              passWord:this.registPassword
+              password:this.registPassword
             }
         })
         .then((res) => {
             if(res.data.code==200){
                 this.$toast.success('注册成功');
+                console.log('zahuishi')
+                this.registUsername = this.registPassword ='';
             }else{
               this.$toast.fail('注册失败');
             }
@@ -56,7 +59,18 @@ export default{
             this.$toast.fail('注册失败');
             console.log(err)
         });
-    } 
+    },
+    loginHandler(){
+      axios({
+          url:url.loginUser,
+          method:'post'
+
+      }).then(res=>{
+
+      }).catch(err=>{
+
+      })
+    }
   }
 }
 </script>

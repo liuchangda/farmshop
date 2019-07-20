@@ -3,7 +3,8 @@ const SERVICEURL = 'http://localhost:3000/'; //真实url
 
 const URL = {
     getVarietyItem: MOCKURL +'getVarietyItem',
-    registUser:SERVICEURL + 'user/registUser'
+    registUser:SERVICEURL + 'user/registUser',
+    loginUser:SERVICEURL + 'user/loginUser'
 };
 
 export default URL;
