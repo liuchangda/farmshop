@@ -7,7 +7,7 @@
                     <van-field label='密码' type="password" placeholder="请输入密码" clearable required v-model="loginPassword "/>
                 </van-cell-group>
                 <div>
-                  <van-button @click="loginHandler()" type="primary" size="large">登录</van-button>
+                  <van-button loadin="true" @click="loginHandler()" type="primary" size="large">登录</van-button>
                 </div>
             </van-tab>
             <van-tab title="注册">
@@ -26,7 +26,7 @@
 <script>
 import axios from 'axios';
 import url from '@/service.config.js';
-
+import {mapActions} from 'vuex'
 export default{
   data(){
     return{
@@ -37,6 +37,7 @@ export default{
     }
   },
   methods:{
+    ...mapActions(['loginAction']),
     //注册的处理方法
     registHandler(){
         axios({
@@ -80,12 +81,14 @@ export default{
               }, 1000);
             }).then(()=>{
               this.$toast.success('登录成功');
+              //保存登录状态
+              this.loginAction(res.data.userInfo);
               this.$router.push('/')
             })
           }
       }).catch(err=>{
         console.log(err);
-        this.$toast.fail('登录失败');
+        this.$toast.fail('保存登录状态失败');
       })
     }
   }
