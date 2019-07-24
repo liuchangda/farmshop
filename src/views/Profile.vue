@@ -51,7 +51,6 @@ export default{
         .then((res) => {
             if(res.data.code==200){
                 this.$toast.success('注册成功');
-                console.log('zahuishi')
                 this.registUsername = this.registPassword ='';
             }else{
               this.$toast.fail('注册失败');

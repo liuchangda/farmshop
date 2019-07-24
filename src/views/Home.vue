@@ -351,7 +351,7 @@ export default {
     height:0.5rem;
     line-height: 0.5rem;
     padding-left: 0.2rem;
-    box-sizing:border-box;
+    box-sizing:border-box; //标准盒模型=>怪异盒模型
   }
   &-swiper{
     &-content{
@@ -374,7 +374,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  &-item{
+  &-item{ 
     flex-basis: 45%;
   }
   img{

@@ -16,8 +16,8 @@ import '@/mock/mock.js'
 // Vue.use(Vant);
 
 //vant按需引入
-import {Toast, Button,Icon,NavBar,Tabbar,TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, CellGroup, Field} from 'vant'
-Vue.use(Toast).use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(CellGroup).use(Field)
+import {Row, Col, Toast, Button,Icon,NavBar,Tabbar,TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, CellGroup, Field} from 'vant'
+Vue.use(Row).use(Col).use(Toast).use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(CellGroup).use(Field)
 
 axios.defaults.baseURL='http://localhost:3000/';  //设置一个类似base_url的请求路径
 global.axios=axios;  //设置一个全局axios便于调用
