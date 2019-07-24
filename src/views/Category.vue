@@ -5,12 +5,16 @@
       <van-row>
         <van-col span="6" class="nav">
           <ul>
-            <li @click="selectCategory(typeId,index)" :class="{active:active==index}" v-for="(item,index) in types" :key="index" >{{item.typeName}}</li>
+            <li @click="selectCategory(item.typeId,index)" :class="{active:active==index}" v-for="(item,index) in types" :key="index" >{{item.typeName}}</li>
           </ul> 
         </van-col>
         <van-col span="18" class="container">
           <van-list class="content" >
-            <div v-for="(item ,index) in productList" :key="index"></div>
+            <div class="content-item" v-for="(item ,index) in productList" :key="index">
+              <img :src="item.img" alt="">
+              <p class="content-item-name" >{{item.name}}</p>
+              <p>￥{{item.price}}</p>
+            </div>
           </van-list>
         </van-col>
       </van-row>
@@ -83,6 +87,27 @@
   }
   .active{
     background: #ffffff;
+  }
+}
+.container{
+  position: fixed;
+  top:1rem;
+  right: 0;
+  bottom:1rem;
+  overflow-y:scroll;
+}
+.content{
+  display:flex;
+  flex-wrap:wrap;
+  padding-bottom:1rem;
+  &-item{
+    width:40%;
+    padding: 0 10px;
+    text-align: center; 
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 </style>
