@@ -5,7 +5,8 @@ const URL = {
     getVarietyItem: MOCKURL +'getVarietyItem',
     registUser:SERVICEURL + 'user/registUser',
     loginUser:SERVICEURL + 'user/loginUser',
-    getTypes:SERVICEURL + 'type/getTypes'
+    getTypes:SERVICEURL + 'type/getTypes',
+    getProductByType:SERVICEURL + 'product/getProductByType'
 };
 
 export default URL;
